@@ -1,0 +1,14 @@
+VM1_news_mysql_conn_info
+
+
+tables = ['judgement_result']
+
+sql_database = SQLDatabase(engine, include_tables=tables)
+
+
+Settings.llm = llm
+Settings.embed_model = embed_model
+sql_query_engine = NLSQLTableQueryEngine(sql_database=sql_database, tables=tables)
+
+
+pip list --format=freeze > requirements.txt
